@@ -353,3 +353,6 @@ MigrationBackup/
 .vscode/tasks.dSYM/Contents/Info.plist
 .vscode/tasks.dSYM/Contents/Resources/DWARF/tasks
 .DS_Store
+code/HelloWorld
+*.plist
+code/HelloWorld.dSYM/Contents/Resources/DWARF/HelloWorld
