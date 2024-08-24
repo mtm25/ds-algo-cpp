@@ -356,3 +356,4 @@ MigrationBackup/
 code/HelloWorld
 *.plist
 code/HelloWorld.dSYM/Contents/Resources/DWARF/HelloWorld
+*.exe
