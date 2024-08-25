@@ -19,6 +19,7 @@ namespace practice_cpp {
 			{"Tom", 28},
 			{"Ryan", 50},
 			{"Muffa", 30},
+			{"Brian", 52}
 		};
 
 		//loop through the vector to print each pair
@@ -29,6 +30,11 @@ namespace practice_cpp {
 			
 			printPair(obj);
 		}
+		std::cout << std::endl;
+
+		//Sort the vector - by default it will sort by first member
+		//in this case the string will be sorted lexicographically
+		//std::sort(data.begin(), data.end());
 
 		// Sort the pairs based on the second value (age)
 		std::sort(data.begin(), data.end(), [](const auto& a, const auto& b) {
