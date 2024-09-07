@@ -21,6 +21,18 @@ namespace practice_cpp {
 		}
 	}
 
+	struct cmp_vector_of_pairs {
+		//descending order based on first element of pair
+		/*bool operator()(const std::pair<std::string, int>& left, const std::pair<std::string, int>& right) {		
+			return left.first > right.first;
+		}*/
+
+		//descending order based on second element of pair
+		bool operator()(const std::pair<std::string, int>& left, const std::pair<std::string, int>& right) {
+			return left.second > right.second;
+		}
+	};
+
 	template<class T>
 	void sort_vectors(T& v) {
 		//print address of vector
@@ -30,12 +42,15 @@ namespace practice_cpp {
 		//std::sort(v.begin(), v.end());
 
 		//Sort in descending order
-		/*std::sort(v.begin(), v.end(), std::greater<int>());*/
-		std::sort(v.begin(), v.end(), [](const auto& a, const auto& b) {
+		/*std::sort(v.begin(), v.end(), [](const auto& a, const auto& b) {
 			return a.first > b.first;
-		});
+		});*/
+		
+		// using library function
+		std::sort(v.begin(), v.end(), cmp_vector_of_pairs());
 
 		// Sort the pairs based on the second value (age)
+		// here auto will be implied as std::pair<std::string, int>
 		/*std::sort(v.begin(), v.end(), [](const auto& a, const auto& b) {
 			return a.second < b.second;
 		});*/
