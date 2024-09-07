@@ -3,7 +3,6 @@
 #include <vector>
 #include <algorithm>
 
-
 namespace practice_cpp {
 
 	//create a pair with an initializer
@@ -11,6 +10,40 @@ namespace practice_cpp {
 		std::pair<std::string, std::string> author{ "James", "Joyce" };
 		//print
 		printPair(author);
+	}
+
+	template<class T>
+	void print_vector(T& v) {
+		std::cout << "print_vector():: Address of vector : " << &v << std::endl;;
+		for (auto& obj : v) {
+			//std::cout << obj << " ";
+			printPair(obj);
+		}
+	}
+
+	template<class T>
+	void sort_vectors(T& v) {
+		//print address of vector
+		std::cout << "sort_vectors():: Address of vector : " << &v <<std::endl;
+		//Sort the vector - by default it will sort by first member
+		//in this case the string will be sorted lexicographically
+		//std::sort(v.begin(), v.end());
+
+		//Sort in descending order
+		/*std::sort(v.begin(), v.end(), std::greater<int>());*/
+		std::sort(v.begin(), v.end(), [](const auto& a, const auto& b) {
+			return a.first > b.first;
+		});
+
+		// Sort the pairs based on the second value (age)
+		/*std::sort(v.begin(), v.end(), [](const auto& a, const auto& b) {
+			return a.second < b.second;
+		});*/
+
+		
+
+		//After sorting
+		print_vector(v);
 	}
 
 	//create a list/vector of pair of string, int with an initializer list
@@ -21,6 +54,7 @@ namespace practice_cpp {
 			{"Muffa", 30},
 			{"Brian", 52}
 		};
+		std::cout << "Address of vector created : " << &data << std::endl;
 
 		//loop through the vector to print each pair
 		int i = 0; // to check the address of each obj in the vector
@@ -32,22 +66,24 @@ namespace practice_cpp {
 		}
 		std::cout << std::endl;
 
+		//sort vectors
+		sort_vectors(data);
 		//Sort the vector - by default it will sort by first member
 		//in this case the string will be sorted lexicographically
 		//std::sort(data.begin(), data.end());
 
 		// Sort the pairs based on the second value (age)
-		std::sort(data.begin(), data.end(), [](const auto& a, const auto& b) {
-			return a.second < b.second;
-		});
+		//std::sort(data.begin(), data.end(), [](const auto& a, const auto& b) {
+		//	return a.second < b.second;
+		//});
 
-		i = 0; 
-		for (auto& obj : data) {
-			std::cout << "Address of obj " << &obj;
-			std::cout << "\tAddress of actual data " << &data[i++] << std::endl;;
+		//i = 0; 
+		//for (auto& obj : data) {
+		//	std::cout << "Address of obj " << &obj;
+		//	std::cout << "\tAddress of actual data " << &data[i++] << std::endl;;
 
-			printPair(obj);
-		}
+		//	printPair(obj);
+		//}
 
 	}
 
