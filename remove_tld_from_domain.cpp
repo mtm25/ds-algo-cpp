@@ -24,8 +24,9 @@ namespace practice_cpp {
 		std::string new_string = "";
 		for (std::string& ele : listOfTLDs) {
 			//if tld is prenst find pos
-			size_t pos = domain.rfind(ele);
-			if (pos != std::string::npos) {
+			//size_t pos = domain.rfind(ele);
+			//if (pos != std::string::npos) {
+			if (size_t pos = domain.rfind(ele); pos != std::string::npos) { //requires c++17
 				new_string = domain.substr(0, pos);
 				break;
 			}
