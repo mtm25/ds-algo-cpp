@@ -2,6 +2,7 @@
 
 #include "vector_examples.h"
 #include "pair_examples.h"
+#include "remove_tld_from_domain.h"
 
 using namespace practice_cpp;
 
@@ -12,7 +13,9 @@ int main()
 
 
   //practice_cpp::test_vector();
-  practice_cpp::test_pair();
+  //practice_cpp::test_pair();
+
+  practice_cpp::test_removeTldFromDomain();
 
   return 0;
 }
