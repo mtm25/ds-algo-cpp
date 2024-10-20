@@ -31,6 +31,11 @@ namespace book_cpp_20_for_programmers {
 		std::cout << " Address for Alias Time obj: " << &ref_obj<< std::endl;
 		std::cout << " Address for Pointer to Time obj: " << &ptr_obj<< std::endl;
 		std::cout << " Pointer to Time obj: " << ptr_obj<< std::endl;
+
+
+		std::cout << "Time : " << time.to12HourString() << std::endl;
+		std::cout << "Time using ref to obj: " << ref_obj.to12HourString() << std::endl;
+		std::cout << "Time using ptr to obj: " << ptr_obj->to12HourString() << std::endl;
 	}
 
 	void test_Time() {
