@@ -17,7 +17,24 @@ namespace book_cpp_20_for_programmers {
 		std::cout << " Time in 12 hour format is : " << time.to12HourString() << std::endl;
 	}
 
+
+	void checkReferenceVsPointer() {
+		Time time;
+		time.setTime(15, 30, 30);
+
+		//Time& ref_obj{time}; //this also works
+		Time& ref_obj = time;
+		//Time* ptr_obj{&time}; //this also works
+		Time* ptr_obj = &time;
+
+		std::cout << " Address for Time obj: " << &time << std::endl;
+		std::cout << " Address for Alias Time obj: " << &ref_obj<< std::endl;
+		std::cout << " Address for Pointer to Time obj: " << &ptr_obj<< std::endl;
+		std::cout << " Pointer to Time obj: " << ptr_obj<< std::endl;
+	}
+
 	void test_Time() {
-		createTimeObjects();
+		//createTimeObjects();
+		checkReferenceVsPointer();
 	}
 }

@@ -25,3 +25,4 @@ void test_Time();
 // The private data members are using in-class initializer to set to 0 as defualt value when an objet is created
 // For member functions to24HourString and to12HourString, the const keyword
 // must appear in both the function prototypes and the function definitions.
+// There is no constructor yet for this class so the compiler provides one by default
