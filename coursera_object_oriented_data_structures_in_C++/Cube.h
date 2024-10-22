@@ -5,6 +5,8 @@
 namespace coursera_object_oriented_data_structures_in_cpp {
 	class Cube {
 	public:
+		Cube();
+		Cube(const Cube&);
 		double getVolume();
 		double getSurfaceArea();
 		void setLength(double length);
@@ -12,6 +14,7 @@ namespace coursera_object_oriented_data_structures_in_cpp {
 		double length_;
 	};
 
+	void test_cube();
 }
 
 // The function will be defined in the Cube.cpp source code file.
