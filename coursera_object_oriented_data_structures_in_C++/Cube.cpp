@@ -3,7 +3,7 @@
 
 namespace coursera_object_oriented_data_structures_in_cpp {
 
-	double Cube::getVolume() {
+	double Cube::getVolume() const {
 		return length_ * length_ * length_;
 	}
 
@@ -31,12 +31,13 @@ namespace coursera_object_oriented_data_structures_in_cpp {
 	}
 	void createCubeObj() {
 		Cube c; //invokes default constructor.
-		std::cout << "Volume of copied object : " << c.getVolume() << std::endl;
-		foo(c); //pass object by value
+		std::cout << "Volume of created object : " << c.getVolume() << std::endl;
+		
+		//foo(c); 
 
 
-		Cube x = c;
-		std::cout << "Volume of copied object : " << x.getVolume() << std::endl;
+		//Cube x = c;
+		//std::cout << "Volume of copied object : " << x.getVolume() << std::endl;
 	}
 
 	void test_cube() {

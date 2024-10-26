@@ -7,7 +7,7 @@ namespace coursera_object_oriented_data_structures_in_cpp {
 	public:
 		Cube();
 		Cube(const Cube&);
-		double getVolume();
+		double getVolume() const; // const to right of function tells that member function not allowed to modify member data
 		double getSurfaceArea();
 		void setLength(double length);
 	private:
